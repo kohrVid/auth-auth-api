@@ -6,6 +6,7 @@ This is an authentication service that I'm writing with gRPC.
 <!-- vim-markdown-toc GFM -->
 
 * [Protobuf](#protobuf)
+* [gRPC server](#grpc-server)
 
 <!-- vim-markdown-toc -->
 
@@ -26,3 +27,11 @@ my machine was with the following:
 To regenerate the go code associated with the protobuf files, run:
 
     protoc -I . --go_out=plugins=grpc:. ./*.proto
+
+## gRPC server
+
+In the dev environment, it should be possible to run the server with the following command:
+
+    go run main.go
+
+The server listens to TCP port 9999 by default.
