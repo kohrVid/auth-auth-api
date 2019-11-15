@@ -1,0 +1,15 @@
+syntax = "proto3";
+package pb;
+
+message AuthenticationRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message AuthenticationResponse {
+  string result = 1;
+}
+
+service AuthenticationService {
+  rpc CredentialCheck (AuthenticationRequest) returns (AuthenticationResponse);
+}
