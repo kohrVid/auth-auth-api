@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net"
 
-	"github.com/kohrVid/auth/auth-api/pb"
+	"github.com/kohrVid/auth/proto"
 	log "github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
@@ -22,7 +22,7 @@ func main() {
 	fmt.Println("Listening on localhost:9999...")
 
 	s := grpc.NewServer()
-	pb.RegisterAuthenticationServiceServer(s, &server{})
+	proto.RegisterAuthenticationServiceServer(s, &server{})
 	reflection.Register(s)
 
 	if err := s.Serve(lis); err != nil {
@@ -30,7 +30,7 @@ func main() {
 	}
 }
 
-func (s *server) CredentialCheck(ctx context.Context, r *pb.AuthenticationRequest) (*pb.AuthenticationResponse, error) {
+func (s *server) CredentialCheck(ctx context.Context, r *proto.AuthenticationRequest) (*proto.AuthenticationResponse, error) {
 	// TODO - Actually authenticate against a database
-	return &pb.AuthenticationResponse{Result: "OK"}, nil
+	return &proto.AuthenticationResponse{Result: "OK"}, nil
 }
