@@ -1,11 +1,11 @@
 package main
 
 import (
-	"context"
 	"fmt"
 	"net"
 	"path/filepath"
 
+	"github.com/kohrVid/auth/auth-api/routes"
 	certs "github.com/kohrVid/auth/certs/helpers"
 	"github.com/kohrVid/auth/proto"
 	log "github.com/sirupsen/logrus"
@@ -13,8 +13,6 @@ import (
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/reflection"
 )
-
-type server struct{}
 
 func main() {
 	certPath := filepath.Join("..", "certs")
@@ -32,15 +30,10 @@ func main() {
 
 	fmt.Println("Listening on localhost:9999...")
 
-	proto.RegisterAuthenticationServiceServer(s, &server{})
+	proto.RegisterAuthenticationServiceServer(s, &routes.Server{})
 	reflection.Register(s)
 
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}
-}
-
-func (s *server) CredentialCheck(ctx context.Context, r *proto.AuthenticationRequest) (*proto.AuthenticationResponse, error) {
-	// TODO - Actually authenticate against a database
-	return &proto.AuthenticationResponse{Result: "OK"}, nil
 }
