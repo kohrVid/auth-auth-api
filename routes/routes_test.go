@@ -11,8 +11,10 @@ var s Server = Server{}
 
 func TestCredentialsCheck(t *testing.T) {
 	expectedResp := "OK"
-	username := "magda"
-	password := "magypi123"
+	username := "admin"
+	password := "nevermore"
+	//username := "magda"
+	//password := "magypi12"
 
 	req := &proto.AuthenticationRequest{
 		Username: username,
