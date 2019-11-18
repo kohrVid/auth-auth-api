@@ -1,4 +1,4 @@
-dn: uid=user,ou=Users,dc=kohrvid,dc=local
+dn: uid=magda,ou=Users,dc=kohrvid,dc=com
 objectClass: inetOrgPerson
 objectClass: posixAccount
 objectClass: shadowAccount
@@ -9,6 +9,6 @@ cn: magda
 displayName: magda
 uidNumber: 10000
 gidNumber: 8000
-userPassword: password
-homeDirectory: /home/user
-mail: magda@kohrvid.local
+userPassword: magypi12
+homeDirectory: /home/magda
+mail: magda@kohrvid.com

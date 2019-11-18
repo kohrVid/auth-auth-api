@@ -1,0 +1,11 @@
+dn: cn=kohrvid Admins,ou=Groups,dc=kohrvid,dc=com
+objectClass: posixGroup
+cn: kohrvid Admins
+gidNumber: 5000
+memberUid: superuser
+
+dn: cn=kohrvid Users,ou=Groups,dc=kohrvid,dc=com
+objectClass: posixGroup
+cn: kohrvid Users
+gidNumber: 5001
+memberUid: user

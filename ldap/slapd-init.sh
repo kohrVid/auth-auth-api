@@ -73,7 +73,7 @@ configure_memberof_overlay(){
 
 load_initial_data() {
     echo "Load data..."
-    local data=$(find ${DATA_DIR} -maxdepth 1 -name \*_\*.ldif -type f | sort)
+    local data=$(find ${DATA_DIR} -maxdepth 1 -name \*.ldif -type f | sort)
     for ldif in ${data}; do
         echo "Processing file ${ldif}..."
         ldapadd -x -H ldapi:/// \
