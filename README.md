@@ -6,6 +6,8 @@ This is an authentication service that I'm writing with gRPC.
 
 * [gRPC server](#grpc-server)
 * [Docker](#docker)
+  * [LDAP](#ldap)
+  * [API](#api)
 
 <!-- vim-markdown-toc -->
 
@@ -25,7 +27,18 @@ the network:
 
     docker network create --driver bridge kohrvid-dev
 
-Then build and run the image:
+
+### LDAP
+
+The OpenLDAP instance can be run with the following commands:
+
+    docker build -f Dockerfile.ldap -t="openldap" .
+    docker run --privileged -d -p 389:389 openldap
+
+
+### API
+
+To build the API, run:
 
     docker build -t="auth-api" .
     docker run --net kohrvid-dev -p 9999:9999 auth-api

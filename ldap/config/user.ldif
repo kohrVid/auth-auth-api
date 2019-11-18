@@ -1,0 +1,14 @@
+dn: uid=user,ou=Users,dc=kohrvid,dc=local
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: magda
+sn: Magpie
+givenName: Magda
+cn: magda
+displayName: magda
+uidNumber: 10000
+gidNumber: 8000
+userPassword: password
+homeDirectory: /home/user
+mail: magda@kohrvid.local

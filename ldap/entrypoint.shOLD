@@ -1,0 +1,5 @@
+#!/bin/bash
+
+exec /usr/sbin/slapd -f /etc/openldap/slapd.conf -h "ldapi:/// ldap:///" -d stats &
+sleep 10
+ldapadd -x -w mypassword -D "cn=ldapadm,dc=kohrvid" -f /etc/openldap/schema/base.ldif
