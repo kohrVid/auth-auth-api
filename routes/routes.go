@@ -5,8 +5,8 @@ import (
 	"fmt"
 
 	"github.com/go-ldap/ldap/v3"
-	"github.com/kohrVid/auth/auth-api/session"
-	"github.com/kohrVid/auth/proto"
+	"github.com/kohrVid/auth-auth-api/session"
+	proto "github.com/kohrVid/auth-proto"
 )
 
 type Server struct{}

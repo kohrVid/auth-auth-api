@@ -5,9 +5,9 @@ import (
 	"net"
 	"path/filepath"
 
-	"github.com/kohrVid/auth/auth-api/routes"
-	certs "github.com/kohrVid/auth/certs/helpers"
-	"github.com/kohrVid/auth/proto"
+	"github.com/kohrVid/auth-auth-api/routes"
+	certs "github.com/kohrVid/auth-certs/helpers"
+	proto "github.com/kohrVid/auth-proto"
 	log "github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"

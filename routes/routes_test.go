@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/kohrVid/auth/proto"
+	proto "github.com/kohrVid/auth-proto"
 )
 
 var s Server = Server{}
