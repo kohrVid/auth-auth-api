@@ -32,13 +32,13 @@ the network:
 
 The OpenLDAP instance can be run with the following commands:
 
-    docker build -f Dockerfile.ldap -t="openldap" .
-    docker run --privileged -d -p 389:389 openldap
+    docker build -f Dockerfile.ldap -t="kohrvid/auth-openldap:latest" .
+    docker run --privileged -d -p 389:389 kohrvid/auth-openldap:latest
 
 
 ### API
 
 To build the API, run:
 
-    docker build -t="auth-api" .
-    docker run --net kohrvid-dev -p 9999:9999 auth-api
+    docker build -t="kohrvid/auth-api:latest" .
+    docker run --net kohrvid-dev -p 9999:9999 kohrvid/auth-api:latest
